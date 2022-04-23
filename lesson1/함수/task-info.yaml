@@ -1,0 +1,19 @@
+type: edu
+files:
+- name: src/Task.kt
+  visible: true
+  placeholders:
+  - offset: 72
+    length: 6
+    placeholder_text: 안녕하세요!
+  - offset: 84
+    length: 72
+    placeholder_text: "// 여기다 함수 작성"
+- name: test/Tests.kt
+  visible: false
+- name: img.png
+  visible: true
+- name: img_1.png
+  visible: true
+- name: img_2.png
+  visible: true

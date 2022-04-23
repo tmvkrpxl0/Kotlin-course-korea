@@ -1,0 +1,19 @@
+type: edu
+files:
+- name: src/Main.kt
+  visible: true
+  placeholders:
+  - offset: 36
+    length: 3
+    placeholder_text: "12342"
+  - offset: 62
+    length: 2
+    placeholder_text: 2a
+  - offset: 82
+    length: 1
+    placeholder_text: aaaaa
+  - offset: 104
+    length: 4
+    placeholder_text: "2.0"
+- name: test/Tests.kt
+  visible: false
