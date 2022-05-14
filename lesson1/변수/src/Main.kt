@@ -5,4 +5,5 @@ fun main() {
     val a2 = 2
     val b = 'a'
     val f: Float = 2.0F
+
 }

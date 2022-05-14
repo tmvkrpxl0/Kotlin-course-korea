@@ -7,8 +7,8 @@ files:
     length: 6
     placeholder_text: 안녕하세요!
   - offset: 84
-    length: 72
-    placeholder_text: "// 여기다 함수 작성"
+    length: 73
+    placeholder_text: // 여기다 함수 작성
 - name: test/Tests.kt
   visible: false
 - name: img.png

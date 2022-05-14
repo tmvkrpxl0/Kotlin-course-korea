@@ -4,6 +4,6 @@ fun main(args: Array<String>) {
 }
 
 fun function(x: Int): String {
-    val answer = "성공"
+    val answer = "성공 "
     return answer
 }
