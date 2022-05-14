@@ -115,6 +115,10 @@ class Player(a: String, b: String, c: Int) {
 
 ```kotlin
 class Player(name: String, ip: String, id: Int) {
+    var name = ""
+    var ip = ""
+    var id = 0
+    
     init {
         this.name = name
         this.ip = ip
@@ -122,9 +126,6 @@ class Player(name: String, ip: String, id: Int) {
         
         println("Created!")
     }
-    var name = ""
-    var ip = ""
-    var id = 0
 }
 ```
 
@@ -179,7 +180,7 @@ class Animal: LivingThing() {
 만약 부모 클래스에 생성자가 있다면 다음과 같이 작성해야 한다
 
 ```kotlin
-class Parent(val a: Int) {
+open class Parent(val a: Int) {
     
 }
 
