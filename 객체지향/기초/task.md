@@ -158,17 +158,17 @@ class Animal {
 이때 상속을 활용하면 `die` 를 한번만 정의해도 위 `Monster` 와 `Animal` 둘 다 `die` 라는 함수를 가지도록 할 수 있다.
 
 ```kotlin
-class LivingThing {
+open class LivingThing {
     fun die() {
         // ....
     }
 }
 
-class Monster: LivingThing {
+class Monster: LivingThing() {
     // ...
 }
 
-class Animal: LivingThing {
+class Animal: LivingThing() {
     // ....
 }
 ```
