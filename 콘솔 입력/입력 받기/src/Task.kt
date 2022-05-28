@@ -1,3 +1,5 @@
+import java.util.*
+
 fun solution(): Int {
-    TODO()
+    val scanner = Scanner(System.`in`)
 }
