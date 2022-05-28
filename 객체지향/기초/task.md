@@ -174,10 +174,11 @@ class Animal: LivingThing() {
 }
 ```
 
-`클래스 이름: 상속할 클래스 이름` 식으로 작성한다.
+`클래스 이름: 상속할 클래스 이름()` 식으로 작성한다.
+상속할 클래스는 `open` 과 함께 정의되어야만 하며
 이때, `LivingThing` 은 부모 클래스, 또는 상위 클래스라고 하며 `Monster` 와 `Animal` 은 `LivingThing` 의 하위 클래스, 또는 자식 클래스라고 한다.
 `LivingThing` 에 존재하는 모든 변수와 함수는 [`private`][접근제한자] 만 아니라면 `Monster` 와 `Animal` 에서 사용할 수 있다.
-만약 부모 클래스에 생성자가 있다면 다음과 같이 작성해야 한다
+만약 부모 클래스에 생성자가 있다면 다음과 같이 작성해야 한다:
 
 ```kotlin
 open class Parent(val a: Int) {
@@ -262,11 +263,11 @@ fun verify(db: Database) {
 상속은 하나만 되지만 구현은 여러개가 가능하다. 또한 상속과 구현을 동시에 할 수 있다.
 
 ```kotlin
-class Parent1 {
+open class Parent1 {
     
 }
 
-class Parent2 {
+open class Parent2 {
     
 }
 
@@ -278,13 +279,35 @@ interface Interface2 {
     
 }
 
-class Child1: Parent1, Parent2 { // 불가능
+class Child1: Parent1(), Parent2() { // 불가능
     
 }
 
-class Child2: Parent1, Interface1, Interface2 // 가능
+class Child2: Parent1(), Interface1, Interface2 // 가능
 
 ```
+
+그런데, 위에서 `override` 란 키워드를 사용한 적이 있다.
+이 키워드의 역할은, 상속받은 것을 덮어 씌울때, 또는 인터페이스로부터 구현을 강요받은 것을 구현할 때 사용한다.
+```kotlin
+open class Parent{
+    fun print() {
+        println("parent")
+    }
+}
+
+class Child: Parent(){
+    override fun print() {
+        println("child")
+    }
+}
+
+fun main() {
+    Child().print()
+}
+```
+위 프로그램의 출력은 "child" 이다, `Child` 의 `print` 가 `Parent` 로 부터 상속받은 `print` 를 덮어씌운 것이다. Override 는 덮어씌움을 강조할 때 사용된다.
+
 
 ### 가시성
 클래스를 작성하다보면 외부에서 변경하거나 읽을 필요가 없는 값들이 있을 수도 있다. 또는 라이브러리를 만든다고 했을 때, 라이브러리 사용자들이
@@ -318,5 +341,8 @@ fun main() {
 `protected` 는 같은 클래스 또는 자식 클래스에서 사용할 수 있도록 한다.
 `internal` 은 같은 모듈 안에서만 사용할 수 있도록 한다, 동일한 프로젝트에 정의된 클래스들이면 다 사용할 수 있다.
 `public` 은 모든 곳에서 사용할 수 있도록 한다.
+
+### 데이터 클래스
+데이터
 
 [접근제한자]: #가시성
