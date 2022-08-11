@@ -12,13 +12,15 @@ class Test {
 
         val length = Random.nextInt(50..200)
 
-        val testData = (1..length).map { Random.nextInt() }.toIntArray()
+        val testData = (1..length).map { Random.nextInt(-2000000..2000000) }.toIntArray()
         val inputString = testData.joinToString("\n", postfix = "\n")
         System.setIn(inputString.byteInputStream())
+
+        val toCheck = testData.map { it + 2 }
 
         val result: List<Int> = solution(length)
 
         System.setIn(`in`)
-        Assert.assertArrayEquals(testData, result.toIntArray())
+        Assert.assertArrayEquals(toCheck.toIntArray(), result.toIntArray())
     }
 }
